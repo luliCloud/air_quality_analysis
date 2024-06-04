@@ -11,7 +11,8 @@ This project investigates the relationship between industrial facilities, greenh
 ## Feature Engineering
  Key steps included **aggregating emissions data by facility and year**, **merging these aggregates with county population data**, and **creating a pivot table for air quality measures**. 
  - For model 1, we applied **standarization of features** by subtracting the mean and scaling to unit variance (`preprocessing.StandardScaler` from `sklearn`). 
- - For model 2, we performed **one-hot encoding** on major industry types and **categorized** the percentage of days with PM2.5 levels into three severity levels: Good, Moderate, and Poor. We also **standardized** the non one-hot encoded features. 
+ - For model 2, we performed **one-hot encoding** on major industry types and **categorized** the percentage of days with PM2.5 levels into three severity levels: Good, Moderate, and Poor. We also **standardized** the non one-hot encoded features.
+ 
  These features were crucial for building predictive models.
 
 ## Machine Learning Model Selection
