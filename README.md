@@ -5,20 +5,20 @@ Demo in YouTube: https://www.youtube.com/watch?v=T06xX9X0MH0
 This project investigates the relationship between industrial facilities, greenhouse gas emissions, population density, and air quality in various US counties using **machine learning models** and **data analysis techniques**. 
 
 ## Data Preparation
-1. We cleaned and merged datasets from the `EPA's Greenhouse Gas Reporting Program (GHGRP)` and `Air Quality System (AQS)`, as well as `population estimates for US counties`. This process included **renaming columns for readability**, **filtering top air quality measures**, **synchronizing datasets by common years and states**, and **merging them** based on common identifiers such as 'State' and 'County'. The final result was two comprehensive DataFrames: `facility_gas` (for **Model 1**) and `county_gas_air_quality` (for **Model 2**).
-2. We **randomly splitted** both DataFrames into **training and testing sets** using the same approach: 70% for training sets and 30% for validation set (using `train_test_split` function from `sklearn.model_selection`).
+1. We cleaned and merged datasets from the `EPA's Greenhouse Gas Reporting Program (GHGRP)` and `Air Quality System (AQS)`, as well as `population estimates for US counties`. This process included **renaming columns for readability**, **filtering top air quality measures**, **synchronizing datasets by common years and states**, and **merging them** based on common identifiers such as `State` and `County`. The final result was two comprehensive DataFrames: `facility_gas` (for **Model 1**) and `county_gas_air_quality` (for **Model 2**).
+2. We **randomly splitted** both DataFrames into **training and validations datasets** using the same approach: 70% for training sets and 30% for validation set (using `train_test_split` function from `sklearn.model_selection`).
 
 ## Feature Engineering
  Key steps included **aggregating emissions data by facility and year**, **merging these aggregates with county population data**, and **creating a pivot table for air quality measures**. 
  - For model 1, we applied **standarization of features** by subtracting the mean and scaling to unit variance (`preprocessing.StandardScaler` from `sklearn`). 
- - For model 2, we performed **one-hot encoding** on major industry types and **categorized** the percentage of days with PM2.5 levels into three severity levels: Good, Moderate, and Poor. We also **standardized** the non one-hot encoded features.
- 
+ - For model 2, we performed **one-hot encoding** (`pandas.get_dummies()`) on major industry types and **categorized** the percentage of days with PM2.5 levels into three severity levels: Good, Moderate, and Poor. We also **standardized** the non-one-hot encoded features.
+
  These features were crucial for building predictive models.
 
 ## Machine Learning Model Selection
 Two machine learning models were constructed to address our research questions
-- Model 1: The first model aimed to predict the industry type of facilities based on their gas emissions. We used the standarized training data to train the first **logistic regression model** (using`LogisticRegression` from `sklearn`) and evaluated the model performance using training and validation datasets. 
-- Model 2: aimed to predict county air quality levels based on the sum of gas emissions, population density, and major industry types. We used **one-hot coding** data, non-hot coding training dataset to train the second **logistic regression model** and to determine which level of air quality they are mostly associated with. We evaluated the model performance using training and validation datasets.
+- **Model 1**: The first model aimed to predict the industry type of facilities based on their gas emissions. We used the standarized training data to train the first **logistic regression model** (using`LogisticRegression` from `sklearn`) and evaluated the model performance using training and validation datasets. 
+- **Model 2**: aimed to predict county air quality levels based on the sum of gas emissions, population density, and major industry types. We used **one-hot coding** data, non-one-hot coding training dataset to train the second **logistic regression model** and to determine which level of air quality they are mostly associated with. We evaluated the model performance using training and validation datasets.
 
 ## Performance Evaluation
 Hyperparameter tuning was performed to optimize the performance of both models. For the logistic regression models, we standardized features and evaluated performance using precision and recall metrics. 
