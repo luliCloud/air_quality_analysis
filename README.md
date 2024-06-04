@@ -6,7 +6,7 @@ This project investigates the relationship between industrial facilities, greenh
 
 ## Data Preparation
 1. We cleaned and merged datasets from the `EPA's Greenhouse Gas Reporting Program (GHGRP)` and `Air Quality System (AQS)`, as well as `population estimates for US counties`. This process included **renaming columns for readability**, **filtering top air quality measures**, **synchronizing datasets by common years and states**, and **merging them** based on common identifiers such as 'State' and 'County'. The final result was two comprehensive DataFrames: `facility_gas` (for **Model 1**) and `county_gas_air_quality` (for **Model 2**).
-2. We randomly splitted both DataFrames into training and testing sets using the same approach: 70% for training sets and 30% for validation set (using `train_test_split` function from `sklearn.model_selection`).
+2. We **randomly splitted** both DataFrames into **training and testing sets** using the same approach: 70% for training sets and 30% for validation set (using `train_test_split` function from `sklearn.model_selection`).
 
 ## Feature Engineering
  Key steps included **aggregating emissions data by facility and year**, **merging these aggregates with county population data**, and **creating a pivot table for air quality measures**. 
