@@ -21,8 +21,7 @@ Two machine learning models were constructed to address our research questions
 
 ## Model performance evaluation and Conclusion
 Hyperparameter tuning was performed to optimize the performance of both models. For the logistic regression models, we standardized features and evaluated performance using precision and recall metrics. 
-## Model 1 Performance
-
+### Model 1 Performance
 **Training Accuracy**: 0.8133481646273637  
 **Validation Accuracy**: 0.7612869745718733
 
@@ -37,8 +36,7 @@ Hyperparameter tuning was performed to optimize the performance of both models. 
 
 _An accuracy exceeding 75% suggests that appropriate features were selected to predict facility industry type. The discrepancy between the training and testing datasets indcaites that the model is slightly overfitting._
 
-## Model 2 Performance
-
+### Model 2 Performance
 **Training Accuracy**: 0.7881308929561841  
 **Validation Accuracy**: 0.7868217054263565
 
@@ -58,7 +56,6 @@ Additionally, we explored the corrlations between different features related to 
 
 To better understand air quality in the US, we created a choropleth map of the Annual Average PM2.5 level for each county in 2010. It is worh noting that the air quality in the estern and western regisons of the central US was poor. 
 ![Distribution of air quality in each county of US in 2010](figures/Figure5.png)
-
 
 Overall, the study highlights the significant impact of industrial activities and population density on air quality. The two maching learning models we established from this project can be used to predict air quality based on different factors, based on the data being provided in the future. The models developed provide valuable insights for policymakers to mitigate air pollution through targeted industrial regulation and management.
 
