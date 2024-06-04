@@ -1,4 +1,4 @@
-# Utilizing Machine Learning Models for Real-World Air Quality Analysis
+# Designing Machine Learning Solutions for Real-World Air Quality Predition
 Demo in YouTube: https://www.youtube.com/watch?v=T06xX9X0MH0 
 
 ## Overview
@@ -14,12 +14,12 @@ This project investigates the relationship between industrial facilities, greenh
  - For model 2, we performed **one-hot encoding** on major industry types and **categorized** the percentage of days with PM2.5 levels into three severity levels: Good, Moderate, and Poor. We also **standardized** the non one-hot encoded features. 
  These features were crucial for building predictive models.
 
-## Machine Learning Modeling
+## Machine Learning Selection
 Two machine learning models were constructed to address our research questions
 - Model 1: The first model aimed to predict the industry type of facilities based on their gas emissions. We used the standarized training data to train the first **logistic regression model** (using`LogisticRegression` from `sklearn`) and evaluated the model performance using training and validation datasets. 
-- The second model aimed to predict county air quality levels based on the sum of gas emissions, population density, and major industry types. We used **one-hot coding** data, non-hot coding training dataset to train the second **logistic regression model** and to determine which level of air quality they are mostly associated with. We evaluated the model performance using training and validation datasets.
+- Model 2: aimed to predict county air quality levels based on the sum of gas emissions, population density, and major industry types. We used **one-hot coding** data, non-hot coding training dataset to train the second **logistic regression model** and to determine which level of air quality they are mostly associated with. We evaluated the model performance using training and validation datasets.
 
-## Model performance evaluation and Conclusion
+## Performance Evaluation
 Hyperparameter tuning was performed to optimize the performance of both models. For the logistic regression models, we standardized features and evaluated performance using precision and recall metrics. 
 ### Model 1 Performance
 **Training Accuracy**: 0.8133481646273637  
@@ -34,8 +34,6 @@ Hyperparameter tuning was performed to optimize the performance of both models. 
 | **Macro Avg**                           | 0.82      | 0.63   | 0.59     | 1927    |
 | **Weighted Avg**                        | 0.80      | 0.76   | 0.70     | 1927    |
 
-_An accuracy exceeding 75% suggests that appropriate features were selected to predict facility industry type. The discrepancy between the training and testing datasets indcaites that the model is slightly overfitting._
-
 ### Model 2 Performance
 **Training Accuracy**: 0.7881308929561841  
 **Validation Accuracy**: 0.7868217054263565
@@ -49,8 +47,7 @@ _An accuracy exceeding 75% suggests that appropriate features were selected to p
 | **Macro Avg**  | 0.54      | 0.42   | 0.42     | 774     |
 | **Weighted Avg** | 0.71      | 0.79   | 0.72     | 774     |
 
-_The minor discrepancy between the training and validation datasets indicates that the model is not overfitting. An accuracy excedding 75% suggests that appropriate features were selected. As accuracy alone cannot comprehensively represent a model's model performance, particuarly given the data distribution heavily skew torwards the "Godd" category, Precision and Recall metrics were also employed to analyze Model 2's performance._
-
+## Conclusion
 Additionally, we explored the corrlations between different features related to air quality and gas emission using corrlation analysis. We visualized teh relationship between variables in the datasets. There is a certain correlation betwen air quality measurements, and there is also a certain correlation between population and air quality indicators. 
 ![pairwise correlation in county_gas_air_quality](figures/Figure7.png)
 
