@@ -1,4 +1,4 @@
-# Designing Machine Learning Solutions for Real-World Air Quality Predition
+# Designing Machine Learning Solution for Real-World Air Quality Predition
 Demo in YouTube: https://www.youtube.com/watch?v=T06xX9X0MH0 
 
 ## Overview
@@ -14,7 +14,7 @@ This project investigates the relationship between industrial facilities, greenh
  - For model 2, we performed **one-hot encoding** on major industry types and **categorized** the percentage of days with PM2.5 levels into three severity levels: Good, Moderate, and Poor. We also **standardized** the non one-hot encoded features. 
  These features were crucial for building predictive models.
 
-## Machine Learning Selection
+## Machine Learning Model Selection
 Two machine learning models were constructed to address our research questions
 - Model 1: The first model aimed to predict the industry type of facilities based on their gas emissions. We used the standarized training data to train the first **logistic regression model** (using`LogisticRegression` from `sklearn`) and evaluated the model performance using training and validation datasets. 
 - Model 2: aimed to predict county air quality levels based on the sum of gas emissions, population density, and major industry types. We used **one-hot coding** data, non-hot coding training dataset to train the second **logistic regression model** and to determine which level of air quality they are mostly associated with. We evaluated the model performance using training and validation datasets.
